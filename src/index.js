@@ -129,7 +129,8 @@ class Img extends Component {
     } else {
       this.i = new Image()
     }
-    this.i.src = this.sourceList[this.state.currentIndex]
+    
+    = this.sourceList[this.state.currentIndex]
 
     if (this.props.decode && this.i.decode) {
       this.i
@@ -147,6 +148,7 @@ class Img extends Component {
     delete this.i.onerror
     delete this.i.onload
     try {
+      this.i.src = "";
       delete this.i.src
     } catch (e) {
       // On Safari in Strict mode this will throw an exception,
